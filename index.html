@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B - Test Calculator</title>
+
+    <!-- Style Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Fin de Style Bootstrap -->
+
+    <!-- STYLE CSS-->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Fin de STYLE CSS-->
+
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <header>
+        <!-- Cabecera TOP -->
+        <div class="row p-5 box-header pt-4 pb-4 sticky-top">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <img src="assets/media/logo-small.png" id="logo">
+            </div>
+        </div>
+        <!-- Title BOX -->
+        <div class="pt-5 pb-5 box-title container-fluid p-5">
+            <div>
+                <h1 class="text-white mb-3 text-lg-start text-center">
+                    Bayesian A/B-test Calculator
+                </h1>
+                <p class="text-white text-lg-start text-center">
+                    What is the probability that your test variation beats the original? Make a solid risk assessment
+                    whether to implement the variation or not.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido de la página -->
+    <section>
+        <div class="row">
+            <!-- Entrada de datos -->
+            <div class="col-lg-4 p-5 box-entr-dat">
+                <!--TEST DATA A/B-->
+                <div class="">
+                    <h3 class="text-lg-start text-center">Test data</h3>
+                    <hr>
+                    <div class="input-p row mt-5">
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Users A" aria-label="user-a"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Conversions A"
+                                    aria-label="conversions-a" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-p row">
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Users B" aria-label="user-b"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Conversions B"
+                                    aria-label="conversions-b" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button-->
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary w-100">
+                            Make Calculation
+                        </button>
+                    </div>
+                </div>
+                <!--TEST DATA A/B-->
+                <div class="mt-5">
+                    <h3 class="text-lg-start text-center">Business case data<span id="opt">(optional)</span></h3>
+                    <hr>
+                    <div class="input-p row mt-5">
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Test duration in days"
+                                    aria-label="test-duration" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="% of traffic in test"
+                                    aria-label="traffic-test" aria-describedby="basic-addon2">
+                                <span class="input-group-text" id="basic-addon2">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-p row">
+                        <div class="col-lg-12 col-12">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">€</span>
+                                <input type="number" class="form-control" placeholder="Average order value"
+                                    aria-label="order-value" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-12">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">€</span>
+                                <input type="number" class="form-control" placeholder="Min. revenue yield in 6 months"
+                                    aria-label="revenue-months" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button-->
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary w-100">
+                            Calculate + Business case
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Salida de datos -->
+            <hr class="d-lg-none d-block w-100">
+            <div class="col-lg-8 bg-salida-d p-lg-5 p-0">
+                <div class="card w-100 p-lg-5 p-4">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 pt-4 pb-4">
+                            <h3 class="text-lg-start text-center pe-lg-0 ps-lg-0 pe-4 ps-4">Risk assessment of implementing B</h3>
+                            <table class="table mt-4">
+                                <thead>                         
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">
+                                        Implement B</th>
+                                    <th>Probability	</th>
+                                    <th>Effect on revenue
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <td scope="row">Expected risk</td>
+                                    <td>50.1<span>%<span></td>
+                                    <td><span>-€</span>3,572</td>
+                                  </tr>
+                                  <tr>
+                                    <td scope="row">Expected uplift</td>
+                                    <td>50.1<span>%<span></td>
+                                    <td><span>-€</span>3,572</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-lg-4 col-12 pt-4 pb-4">
+                            <div class="bg-box-total d-flex justify-content-center align-content-center align-items-center">
+                                <p class="text-center text-white p-total pt-4 pb-4">
+                                    Total contribution<br>
+                                    <span><b>€333</b></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de la página -->
+    <footer>
+        <div class="d-flex justify-content-center p-5 container-fluid">
+            <p class="mb-0 text-white">
+                Copyright © 2022 <b>Axis Metrica</b>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!--Fin de JS Bootstrap -->
+</body>
+
+</html>

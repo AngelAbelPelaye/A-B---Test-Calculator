@@ -1,0 +1,128 @@
+* {
+    padding: 0px;
+}
+
+#logo {
+    width: 200px;
+}
+
+.w-25 {
+    max-width: 25%;
+}
+
+.p-header {
+    max-width: 400px;
+}
+
+.box-title > div > p {
+    font-size: 22px !important;
+}
+
+.box-title {
+    background-image: url(../media/bg-title-box.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-salida-d {
+    background-color: #f8f8f8;
+}
+
+#opt {
+    font-weight: 400;
+}
+
+footer {
+    background-color: #3b3b3b;
+}
+
+.box-entr-dat {
+    min-height: 80vh;
+}
+
+.box-header {
+    background-color: #fff;
+}
+
+input {
+    height: 4em;
+    padding-left: 35px;
+}
+
+.form-control {
+    font-size: 22px !important;
+}
+
+.input-group-text {
+    font-size: 23px !important;
+    font-weight: 700;
+    color: #9f9f9f;
+}
+
+.btn {
+    font-size: 25px !important;
+    padding: 20px 0px;
+    background-color: rgb(42, 132, 215);
+    border: 2px solid rgb(42, 132, 215);
+}
+.bg-box-total {
+    background-color: #51C4A8;
+    height: 100%;
+}
+
+.card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 0px solid #fff;
+}
+
+.p-total {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+th {
+    font-size: 22px ;
+}
+td {
+    font-size: 18px;
+}
+
+footer p {
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    input {
+        height: 3em;
+        padding-left: 20px;
+    }
+    .btn {
+        font-size: 20px !important;
+        padding: 20px 0px;
+        background-color: rgb(42, 132, 215);
+        border: 2px solid rgb(42, 132, 215);
+    }
+    .form-control {
+        font-size: 18px !important;
+    }
+    .card {
+        background-color: #f8f8f8;
+    }
+    th {
+        font-size: 16px ;
+        width: 35%;
+    }
+    td {
+        font-size: 16px;
+    }
+    .p-total {
+        font-size: 22px;
+        font-weight: 500;
+    }
+    footer p {
+        font-size: 16px;
+    }
+}
